@@ -120,7 +120,7 @@ require([
                 measurement.startup();
             });
 
-            map.addLayers([tiledSoilLayer, rigsFeatureLayer]);
+            // map.addLayers([tiledSoilLayer, rigsFeatureLayer]);
 
             //add the basemap gallery, in this case we'll display maps from ArcGIS.com including bing maps
             var basemapGallery = new BasemapGallery({
