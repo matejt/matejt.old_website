@@ -189,8 +189,8 @@ require([
                 query.geometry = evt.geometry;
                 query.where = "1=1";
 
-                queryTask = new QueryTask(rigsUrlFeatureLayer);
-                queryTask.execute(query, processResults, errCallback);
+                // queryTask = new QueryTask(rigsUrlFeatureLayer);
+                // queryTask.execute(query, processResults, errCallback);
                 attrPane = dom.byId("attributeQueryPane");
                 domAttr.set(attrPane, open, true);
 
@@ -222,7 +222,7 @@ require([
                     items: items
                 };
 
-                console.log(data);
+                // console.log(data);
 
                 //Create data store and bind to grid.
                 store = new ItemFileReadStore({ data:data });
