@@ -71,15 +71,15 @@ require([
                 sliderStyle:"large"
             });
 
-            var json = {title:"Attributes",content:"<tr>API: <td>${API}</tr></td><br><tr>Operator: <td>${operatorName}</tr><br><tr>objectId: <td>${OBJECTID}</tr></td>"}
-            var infoTemplate = new InfoTemplate("Well Information", "${*}");
-            rigsUrlFeatureLayer = "http://services1.arcgis.com/5gRznzsV72O3QAUT/arcgis/rest/services/EagleFord_08/FeatureServer/0";
-            var rigsFeatureLayer = new FeatureLayer(rigsUrlFeatureLayer, {
-                id: "rigsFeatures",
-                infoTemplate: infoTemplate,
-                outFields : ["*"],
-                mode: FeatureLayer.MODE_ONDEMAND // ONDEMAND, could also use FeatureLayer.MODE_ONDEMAND
-            });
+            // var json = {title:"Attributes",content:"<tr>API: <td>${API}</tr></td><br><tr>Operator: <td>${operatorName}</tr><br><tr>objectId: <td>${OBJECTID}</tr></td>"}
+            // var infoTemplate = new InfoTemplate("Well Information", "${*}");
+            // rigsUrlFeatureLayer = "http://services1.arcgis.com/5gRznzsV72O3QAUT/arcgis/rest/services/EagleFord_08/FeatureServer/0";
+            // var rigsFeatureLayer = new FeatureLayer(rigsUrlFeatureLayer, {
+            //     id: "rigsFeatures",
+            //     infoTemplate: infoTemplate,
+            //     outFields : ["*"],
+            //     mode: FeatureLayer.MODE_ONDEMAND // ONDEMAND, could also use FeatureLayer.MODE_ONDEMAND
+            // });
 
 //            var rigsTiledLayer = new TiledLayer(rigsUrlLayer);
 
@@ -98,11 +98,13 @@ require([
                 try {
                     toc = new TOC({
                         map: map,
-                        layerInfos: [{
-                            layer: rigsFeatureLayer,
-                            title: "rigsFeatures",
-                            slider: true // whether to display a transparency slider.
-                        }, {
+                        layerInfos: [
+                        // {
+                        //     layer: rigsFeatureLayer,
+                        //     title: "rigsFeatures",
+                        //     slider: true // whether to display a transparency slider.
+                        // }, 
+                        {
                             layer: tiledSoilLayer,
                             title: "Soil Map",
                             // collapsed: false, // whether this root layer should be collapsed initially, default false.
@@ -120,7 +122,10 @@ require([
                 measurement.startup();
             });
 
-            // map.addLayers([tiledSoilLayer, rigsFeatureLayer]);
+            map.addLayers([
+                tiledSoilLayer
+                // ,rigsFeatureLayer
+            ]);
 
             //add the basemap gallery, in this case we'll display maps from ArcGIS.com including bing maps
             var basemapGallery = new BasemapGallery({
