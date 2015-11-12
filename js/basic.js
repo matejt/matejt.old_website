@@ -83,7 +83,7 @@ require([
 
 //            var rigsTiledLayer = new TiledLayer(rigsUrlLayer);
 
-            soilLayerUrl = "http://server.arcgisonline.com/ArcGIS/rest/services/Specialty/Soil_Survey_Map/MapServer";
+            soilLayerUrl = "https://server.arcgisonline.com/ArcGIS/rest/services/Specialty/Soil_Survey_Map/MapServer";
             var tiledSoilLayer = new TiledLayer(soilLayerUrl);
             tiledSoilLayer.setOpacity(0.3);
 
